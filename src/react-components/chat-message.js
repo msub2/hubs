@@ -97,7 +97,7 @@ function renderChatMessage(body, from, allowEmojiRender) {
 }
 
 export async function createInWorldLogMessage({ name, type, body }) {
-  if (type !== "chat") return;
+  if (type !== "chat" || true) return; // TODO: Debug in-world chat, figure out better solution
 
   const [blob, width, height] = await renderChatMessage(body, name, false);
   const entity = document.createElement("a-entity");
